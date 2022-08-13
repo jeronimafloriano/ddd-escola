@@ -1,7 +1,9 @@
 package escola.aplicacao.aluno.matricular;
 
-import escola.dominio.aluno.Aluno;
-import escola.dominio.dadospessoais.Cpf;
+import escola.dominio.eventos.PublicadorDeEventos;
+import escola.dominio.eventos.aluno.OuvinteLogDeAlunoMatriculado;
+import escola.dominio.model.aluno.Aluno;
+import escola.dominio.model.dadospessoais.Cpf;
 import escola.infra.aluno.RepositorioDeAlunosEmMemoria;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -11,7 +13,11 @@ class MatricularAlunoTest {
     @Test
     void alunoDeveriaSerMatriculado(){
         RepositorioDeAlunosEmMemoria repositorio = new RepositorioDeAlunosEmMemoria();
-        MatricularAluno useCase = new MatricularAluno(repositorio);
+
+        PublicadorDeEventos publicador = new PublicadorDeEventos();
+        publicador.adicionarOuvinte(new OuvinteLogDeAlunoMatriculado());
+
+        MatricularAluno useCase = new MatricularAluno(repositorio, publicador);
         useCase.matricular(new MatricularAlunoDto(
                 "145.222.147-14",
                 "Gesse",

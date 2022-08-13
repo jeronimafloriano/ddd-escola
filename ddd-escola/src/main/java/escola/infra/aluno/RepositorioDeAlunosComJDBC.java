@@ -1,10 +1,10 @@
 package escola.infra.aluno;
 
-import escola.dominio.aluno.Aluno;
-import escola.dominio.aluno.RepositorioDeAlunos;
-import escola.dominio.dadospessoais.Cpf;
-import escola.dominio.dadospessoais.Email;
-import escola.dominio.dadospessoais.Telefone;
+import escola.dominio.model.aluno.Aluno;
+import escola.dominio.model.aluno.RepositorioDeAlunos;
+import escola.dominio.model.dadospessoais.Cpf;
+import escola.dominio.model.dadospessoais.Email;
+import escola.dominio.model.dadospessoais.Telefone;
 import escola.exception.AlunoNaoEncontradoException;
 
 import java.sql.Connection;
@@ -27,7 +27,7 @@ public class RepositorioDeAlunosComJDBC implements RepositorioDeAlunos {
         String sql = "INSERT INTO ALUNO VALUES (?,?,?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, aluno.getNumeroCpf());
+            ps.setString(1, aluno.getCpf().getNumeroCpf());
             ps.setString(2, aluno.getNome());
             ps.setString(3, aluno.getEmail().toString());
             ps.execute();
@@ -58,7 +58,7 @@ public class RepositorioDeAlunosComJDBC implements RepositorioDeAlunos {
         String sql = "SELECT id, nome, email FROM ALUNO WHERE cpf = ?";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, cpf.getCpf().toString());
+            ps.setString(1, cpf.getNumeroCpf().toString());
             ResultSet result = ps.executeQuery();
 
             boolean encontrou = result.next();

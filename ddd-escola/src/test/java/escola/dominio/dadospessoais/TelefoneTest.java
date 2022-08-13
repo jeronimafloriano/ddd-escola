@@ -1,11 +1,14 @@
 package escola.dominio.dadospessoais;
 
-import escola.dominio.dadospessoais.Telefone;
+import escola.dominio.model.dadospessoais.Telefone;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TelefoneTest {
+
+
 
     @Test
     void devePermitirCriarTelefoneValido(){
@@ -25,4 +28,6 @@ public class TelefoneTest {
     void naoDevePermitirCriarTelefoneComNumeroInvalido(){
         assertThrows(IllegalArgumentException.class, () -> new Telefone("62", "12588"));
     }
+
+
 }

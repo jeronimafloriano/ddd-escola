@@ -1,5 +1,6 @@
 package escola.dominio.dadospessoais;
 
+import escola.dominio.model.dadospessoais.Email;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

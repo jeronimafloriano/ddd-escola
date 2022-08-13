@@ -2,7 +2,7 @@ package escola.dominio.dadospessoais;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import escola.dominio.dadospessoais.Cpf;
+import escola.dominio.model.dadospessoais.Cpf;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -27,7 +27,7 @@ public class CpfTest {
     void devePermitirCriarCpfValido(){
         String numero = "145.222.147-14";
         Cpf cpf = new Cpf(numero);
-        Assertions.assertEquals(numero, cpf.getCpf());
+        Assertions.assertEquals(numero, cpf.getNumeroCpf());
     }
 
 

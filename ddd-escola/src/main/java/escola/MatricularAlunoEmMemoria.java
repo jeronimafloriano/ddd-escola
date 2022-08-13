@@ -2,8 +2,8 @@ package escola;
 
 import escola.aplicacao.aluno.matricular.MatricularAluno;
 import escola.aplicacao.aluno.matricular.MatricularAlunoDto;
-import escola.dominio.aluno.Aluno;
-import escola.dominio.aluno.FabricaDeAluno;
+import escola.dominio.eventos.PublicadorDeEventos;
+import escola.dominio.eventos.aluno.OuvinteLogDeAlunoMatriculado;
 import escola.infra.aluno.RepositorioDeAlunosEmMemoria;
 
 public class MatricularAlunoEmMemoria {
@@ -15,7 +15,11 @@ public class MatricularAlunoEmMemoria {
         String email = "gesse@teste.com.br";
 
         RepositorioDeAlunosEmMemoria repositorio = new RepositorioDeAlunosEmMemoria();
-        MatricularAluno matricularAluno = new MatricularAluno(repositorio);
+
+        PublicadorDeEventos publicador = new PublicadorDeEventos();
+        publicador.adicionarOuvinte(new OuvinteLogDeAlunoMatriculado());
+
+        MatricularAluno matricularAluno = new MatricularAluno(repositorio, publicador);
         matricularAluno.matricular(new MatricularAlunoDto(cpf, nome, email));
 
 

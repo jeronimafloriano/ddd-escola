@@ -1,9 +1,9 @@
 package escola.infra.aluno;
 
-import escola.dominio.aluno.Aluno;
-import escola.dominio.aluno.RepositorioDeAlunos;
-import escola.dominio.dadospessoais.Cpf;
-import escola.dominio.dadospessoais.Telefone;
+import escola.dominio.model.aluno.Aluno;
+import escola.dominio.model.aluno.RepositorioDeAlunos;
+import escola.dominio.model.dadospessoais.Cpf;
+import escola.dominio.model.dadospessoais.Telefone;
 import escola.exception.AlunoNaoEncontradoException;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class RepositorioDeAlunosEmMemoria implements RepositorioDeAlunos {
     @Override
     public Aluno buscarPorCpf(Cpf cpf) {
         return this.matriculados.stream()
-                .filter(a -> a.getNumeroCpf().equals(cpf.getCpf()))
+                .filter(a -> a.getCpf().getNumeroCpf().equals(cpf.getNumeroCpf()))
                 .findFirst()
                 .orElseThrow(() -> new AlunoNaoEncontradoException(cpf));
     }
