@@ -7,11 +7,11 @@ import lombok.Getter;
 public class Selo {
 
     private Cpf cpfDoAluno;
-    private String nome;
+    private TipoDeSelo tipoDeSelo;
 
-    public Selo(Cpf cpfDoAluno, String nome){
+    public Selo(Cpf cpfDoAluno, TipoDeSelo tipoDeSelo){
         this.cpfDoAluno = cpfDoAluno;
-        this.nome = nome;
+        this.tipoDeSelo = tipoDeSelo;
     }
 
 

@@ -1,5 +1,6 @@
 package escola.shared.dominio.model;
 
+
 public class Cpf {
 
     private String cpf;
@@ -16,4 +17,6 @@ public class Cpf {
     public String getNumeroCpf() {
         return this.cpf;
     }
+
+
 }

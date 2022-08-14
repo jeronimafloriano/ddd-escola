@@ -12,10 +12,6 @@ public final class RepositorioDeSelosEmMemoria implements RepositorioDeSelos {
 
     private final List<Selo> selos = new ArrayList<>();
 
-    private RepositorioDeSelosEmMemoria(){
-        new RepositorioDeSelosEmMemoria();
-    }
-
 
     @Override
     public List<Selo> buscarPorCpfAluno(Cpf cpf) {
@@ -27,7 +23,7 @@ public final class RepositorioDeSelosEmMemoria implements RepositorioDeSelos {
     @Override
     public Selo buscarPorNomeDoSelo(String nome) {
         return this.selos.stream()
-                .filter(a -> a.getNome().equals(nome))
+                .filter(a -> a.getTipoDeSelo().toString().equals(nome))
                 .findAny()
                 .orElseThrow(() -> new IllegalArgumentException("Não foo encontrado selo com o nome informado."));
     }
