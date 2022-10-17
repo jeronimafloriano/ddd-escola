@@ -1,13 +1,0 @@
-
-`	java:S112#"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-`	java:S1123"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-`	java:S112J"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-`	java:S112a"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-e
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÒÖ˜ª
-e
-java:S2095,"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÒÖ˜ª
-e
-java:S2095<"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÒÖ˜ª
-e
-java:S2095S"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÒÖ˜ª
